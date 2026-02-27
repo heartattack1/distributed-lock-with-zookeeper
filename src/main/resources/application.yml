@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: distributed-lock-service
+
+app:
+  zk:
+    connect-string: localhost:2181
+    session-timeout-ms: 15000
+    connection-timeout-ms: 5000
+    base-sleep-time-ms: 1000
+    max-retries: 3
+  jobs:
+    cleanup:
+      fixed-delay-ms: 30000
+    reports:
+      cron: "0 */1 * * * *"
